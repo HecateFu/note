@@ -139,9 +139,9 @@ netstat -lntp
 # SSR
 
 Windows客户端地址  
-<https://github.com/HMBSbige/ShadowsocksR-Windows>
+https://github.com/HMBSbige/ShadowsocksR-Windows
 
 Android客户端地址  
-<https://github.com/doio/Akkariiin-shadowsocksr-android>
+https://github.com/doio/Akkariiin-shadowsocksr-android
 
 
