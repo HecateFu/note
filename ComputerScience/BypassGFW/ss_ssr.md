@@ -1,9 +1,9 @@
 # SS
 Windows客户端地址  
-<https://github.com/shadowsocks/shadowsocks-windows>
+https://github.com/shadowsocks/shadowsocks-windows
 
 Android客户端地址  
-<https://github.com/shadowsocks/shadowsocks-android>
+https://github.com/shadowsocks/shadowsocks-android
 
 ## Windows客户端配置
 
@@ -103,7 +103,7 @@ netstat -lntp
 	![ping国外超时](images/ping_abroad_timeout.png)
 	这种情况基本可以确定你的IP没有被封，可能的原因就是没有开机。
 	解决办法：开机或者重启。
-	2.如果国外能ping通，国内ping不通，如图：
+	2. 如果国外能ping通，国内ping不通，如图：
 	![国外能ping同](images/ping_abroad_succ.png)
 	![ping国内超时](images/ping_inland_timeout.png)
 	如果是这样的话，国外能通，国内却不通了，那么你的IP已经可以确定被墙了。
@@ -111,7 +111,7 @@ netstat -lntp
 	输入IP地址，如图
 	![ping.pe](images/pe.png)
 	点击“Go”进行检测
-	![ping.pe](images/pe_result.png)
+	![ping.pe](images/pe_result.png)  
 	上面为国外监测点，下面为国内监测点，可以看到国外都通，国内全红“表示不通”，这个已经说明你的搬瓦工IP被墙了。
 
 总结：
