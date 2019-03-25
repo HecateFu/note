@@ -46,14 +46,15 @@ Android客户端地址
 #### 安装
 
 Debian / Ubuntu:
-> apt-get install python-pip
->
-> pip install shadowsocks
-
+```shell
+apt-get install python-pip
+pip install shadowsocks
+```
 CentOS:
-> yum install python-setuptools && easy_install pip
-> 
-> pip install shadowsocks
+```shell
+yum install python-setuptools && easy_install pip
+pip install shadowsocks
+```
 
 #### 配置文件
 不会自动生成，需要手动创建，通常在 /etc/shadowsocks.json ，可自定义
@@ -68,8 +69,54 @@ CentOS:
 	"method":"aes-256-cfb",
 	"fast_open": false
 }
-
 ```
+| Name |  Explanation |
+| --- | --- | --- |
+| server |  the address your server listens 服务器监听地址 |
+| server_port | server port 服务器访问端口 |
+| local_address | the address your local listens |
+| local_port | local port |
+| password | password used for encryption 密码 |
+| timeout | in seconds |
+| method | default: "aes-256-cfb", see Encryption  加密方式 |
+| fast_open | use TCP_FASTOPEN, true / false |
+| workers | number of workers, available on Unix/Linux |
+
+#### 后台运行或停止(通过配置文件)
+```shell
+ssserver -c /etc/shadowsocks.json -d start
+ssserver -c /etc/shadowsocks.json -d stop
+```
+#### 问题排查
+- 可以检查服务器地址及端口能否访问  
+https://www.infobyip.com/tcpportchecker.php
+- 查看服务器监听的ip和端口  
+```shell
+netstat -lntp
+```
+- [检查服务ip是否被墙](https://www.banwago.com/1265.html)
+	* https://ping.chinaz.com
+	输入我们需要检测的IP地址，然后选择“海外”如图：  
+	![ping.chinaz.com](images/chinaz.png)
+	输入需要检测的IP地址，点击“ping检测”
+	1. 如果出现全部超时，如下图
+	![ping国外超时](images/ping_abroad_timeout.png)
+	这种情况基本可以确定你的IP没有被封，可能的原因就是没有开机。
+	解决办法：开机或者重启。
+	2.如果国外能ping通，国内ping不通，如图：
+	![国外能ping同](images/ping_abroad_succ.png)
+	![ping国内超时](images/ping_inland_timeout.png)
+	如果是这样的话，国外能通，国内却不通了，那么你的IP已经可以确定被墙了。
+	* https://ping.pe
+	输入IP地址，如图
+	![ping.pe](images/pe.png)
+	点击“Go”进行检测
+	![ping.pe](images/pe_result.png)
+	上面为国外监测点，下面为国内监测点，可以看到国外都通，国内全红“表示不通”，这个已经说明你的搬瓦工IP被墙了。
+
+总结：
+1. 国外+国内都不通：说明IP没有被封，可以检测你的VPS解决。
+2. 国外通+国内不通，很遗憾你的搬瓦工IP被封了。
 
 ----
 
