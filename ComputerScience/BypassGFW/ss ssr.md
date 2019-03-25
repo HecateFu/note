@@ -5,7 +5,7 @@ Windows客户端地址
 Android客户端地址  
 <https://github.com/shadowsocks/shadowsocks-android>
 
-## Windows客户端教程
+## Windows客户端配置
 
 ### 服务器配置
 根据服务器的信息，在客户端配置好以下几项：  
@@ -37,13 +37,13 @@ Android客户端地址
 
 6. 注释 ! 如 ! Comment
 
-==user-rule.txt中的规则并不能直接被shadowsocks使用==，如要添加到user-rule.txt中的规则生效，你还要执行下面重要的一步：更新本地的PAC，更新后user-rule.txt中的自定义规则会添加到PAC.txt文件内。（备注：**每次编辑完user-rule.txt后，均需执行“从GFWList更新本地PAC”**，使本次规则也生效。）
+**user-rule.txt中的规则并不能直接被shadowsocks使用**，如要添加到user-rule.txt中的规则生效，你还要执行下面重要的一步：更新本地的PAC，更新后user-rule.txt中的自定义规则会添加到PAC.txt文件内。（备注：**每次编辑完user-rule.txt后，均需执行“从GFWList更新本地PAC”**，使本次规则也生效。）
 
-### 服务器端配置
+## 服务器端配置
 
-<<https://github.com/shadowsocks/shadowsocks/wiki>>
+https://github.com/shadowsocks/shadowsocks/wiki
 
-#### 安装
+### 安装
 
 Debian / Ubuntu:
 ```shell
@@ -56,7 +56,7 @@ yum install python-setuptools && easy_install pip
 pip install shadowsocks
 ```
 
-#### 配置文件
+### 配置文件
 不会自动生成，需要手动创建，通常在 /etc/shadowsocks.json ，可自定义
 ```json
 {
@@ -82,12 +82,12 @@ pip install shadowsocks
 | fast_open | use TCP_FASTOPEN, true / false |
 | workers | number of workers, available on Unix/Linux |
 
-#### 后台运行或停止(通过配置文件)
+### 后台运行或停止(通过配置文件)
 ```shell
 ssserver -c /etc/shadowsocks.json -d start
 ssserver -c /etc/shadowsocks.json -d stop
 ```
-#### 问题排查
+### 问题排查
 - 可以检查服务器地址及端口能否访问  
 https://www.infobyip.com/tcpportchecker.php
 - 查看服务器监听的ip和端口  
