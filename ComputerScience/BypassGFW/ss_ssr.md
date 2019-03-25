@@ -14,7 +14,7 @@ Android客户端地址
 ### PAC配置
 ![PAC规则配置](images/pac_rule_config.png)  
 
-**"编辑本地 PAC 文件..." **，打开本地的 pac.txt 文件所在目录（一般会和Shadowsock.exe在同一路径下），第一次会自动创建一份。rules中定义了所有的访问规则。  
+**"编辑本地 PAC 文件..."**，打开本地的 pac.txt 文件所在目录（一般会和Shadowsock.exe在同一路径下），第一次会自动创建一份。rules中定义了所有的访问规则。  
 ![PAC.txt](images/pac_text.png)
 
 **“从 GFWList 更新本地 PAC”**，会用远程规则更新本地的gfwlist.js（在 ss_win_temp 目录下）和 pac.txt，如果之前修改过pac.txt，会覆盖之前修改。
@@ -71,7 +71,7 @@ pip install shadowsocks
 }
 ```
 | Name |  Explanation |
-| --- | --- | --- |
+| --- | --- |
 | server |  the address your server listens 服务器监听地址 |
 | server_port | server port 服务器访问端口 |
 | local_address | the address your local listens |
