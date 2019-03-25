@@ -47,10 +47,12 @@ Android客户端地址
 
 Debian / Ubuntu:
 > apt-get install python-pip
+>
 > pip install shadowsocks
 
 CentOS:
 > yum install python-setuptools && easy_install pip
+> 
 > pip install shadowsocks
 
 #### 配置文件
