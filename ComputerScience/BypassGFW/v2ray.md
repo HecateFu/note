@@ -1,5 +1,11 @@
 [官方文档](https://www.v2ray.com/)
+
 [白话文教程](https://toutyrater.github.io/)
+
+[从零开始：史上最详尽V2Ray搭建图文教程](https://www.4spaces.org/digitalocean-build-v2ray-0-1/)
+
+[V2Ray完全使用教程](https://yuan.ga/v2ray-complete-tutorial/)
+
 [项目地址](https://github.com/v2ray/v2ray-core)
 
 [IPIP](https://www.ipip.net/) 服务器速度测 “工具” -> “TraceRouter” 最好低于80，点击下面的查看“查看地图”可以查跳转路径
@@ -64,6 +70,8 @@ bash go.sh
 
 ![安装v2ray](images/bash_op.png)
 
+上面的输出中，有一行 "PORT:38320" 代表着端口号为 38320，还有一行 "UUID:e7292c04-9fdb-4ee2-a6ca-8c7c16d79640" 代表着 id 为 e7292c04-9fdb-4ee2-a6ca-8c7c16d79640。这两个都是随机生成的，会在配置文件中出现。
+
 以上两条命令也可直接使用一条命令代替：
 
 ```shell
@@ -98,7 +106,44 @@ V2Ray 的更新策略是快速迭代，每周更新(无意外的情况下)。版
 
 ## 配置文件
 
+安装脚本生成的初始脚本如下：
 
+```json
+{
+  "inbounds": [{
+    "port": 38320,
+    "protocol": "vmess",
+    "settings": {
+      "clients": [
+        {
+          "id": "e7292c04-9fdb-4ee2-a6ca-8c7c16d79640",
+          "level": 1,
+          "alterId": 64
+        }
+      ]
+    }
+  }],
+  "outbounds": [{
+    "protocol": "freedom",
+    "settings": {}
+  },{
+    "protocol": "blackhole",
+    "settings": {},
+    "tag": "blocked"
+  }],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "ip": ["geoip:private"],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
+}
+```
+
+基本不需要修改，可以直接使用
 
 ## 启动命令
 
