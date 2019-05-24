@@ -20,6 +20,8 @@ V2Ray 是 Project V 下的一个工具。Project V 是一个包含一系列构�
 
 与 Shadowsocks 不同，从软件上 **V2Ray 不区分服务器版和客户端版**，也就是说在服务器和客户端运行的 V2Ray 是同一个软件，区别只是配置文件的不同。因此 V2Ray 的安装在服务器和客户端上是一样的，但是通常情况下 VPS 使用的是 Linux 而 PC 使用的是 Windows。**V2Ray 上的图形客户端大多是调用 V2Ray 内核套一个图形界面的外壳**，类似于 Linux 内核和 Linux 操作系统的关系；而 Shadowsocks 的客户端都是自己重新实现了一遍 Shadowsocks 协议。
 
+**V2Ray 使用 inbound(传入) 和 outbound(传出) 的结构**，这样的结构非常清晰地体现了数据包的流动方向，同时也使得 V2Ray 功能强大复杂的同时而不混乱，清晰明了。形象地说，我们可以把 V2Ray 当作一个盒子，这个盒子有入口和出口(即 inbound 和 outbound)，我们将数据包通过某个入口放进这个盒子里，然后这个盒子以某种机制（这个机制其实就是路由，后面会讲到）决定这个数据包从哪个出口吐出来。以这样的角度理解的话，V2Ray 做**客户端，则 inbound 接收来自浏览器数据，由 outbound 发出去(通常是发到 V2Ray 服务器)**；V2Ray 做**服务器，则 inbound 接收来自 V2Ray 客户端的数据，由 outbound 发出去(通常是如 Google 等想要访问的目标网站)**。
+
 # 服务器端配置
 
 *注：以下使用到的命令均需要root权限*
@@ -106,7 +108,7 @@ V2Ray 的更新策略是快速迭代，每周更新(无意外的情况下)。版
 
 ## 配置文件
 
-安装脚本生成的初始脚本如下：
+### 安装脚本生成的初始脚本
 
 ```json
 {
@@ -143,7 +145,23 @@ V2Ray 的更新策略是快速迭代，每周更新(无意外的情况下)。版
 }
 ```
 
-基本不需要修改，可以直接使用
+基本不需要修改，可以直接使用。
+
+###  V2Ray配置检查功能
+
+```shell
+/usr/bin/v2ray/v2ray -test -config /etc/v2ray/config.json
+```
+
+如果是配置文件没问题，则是这样的：
+
+```shell
+V2Ray 4.18.0 (Po) 20190228
+A unified platform for anti-censorship.
+Configuration OK.
+```
+
+
 
 ## 启动命令
 
