@@ -26,7 +26,7 @@
 
 第一种：在web.xml文件中激活Tomcat的defaultServlet来处理静态文件  
 
-参见 [url-pattern配置 default servlet 章节](../JSP和servlet/url-pattern配置.md#default-servlet)
+参见 [url-pattern配置 default servlet 章节](../JSP和Servlet/url-pattern配置.md#default-servlet)
 
 ```xml
 <!-- 直接添加即可达到效果   有些文章中说要放在dispatcherservlet的后面，我测试了一下，在web.xml文件中没有不存在这个问题-->
