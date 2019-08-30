@@ -280,7 +280,7 @@ com
 
 	公开静态资源的访问类似。
 
-参考 [url-pattern配置](../../JSP和Servlet/url-pattern配置.md)、[Servlet获取URL地址](../../JSP和servlet/Servlet获取URL地址.md)、[SpringMVC页面访问不到静态文件](../SpringMVC页面访问不到静态文件.md)、[ContextLoaderListener和DispatcherServlet](../ContextLoadListener和DispatcherServlet.md)
+参考 [url-pattern配置](../../JSP和Servlet/url-pattern配置.md)、[Servlet获取URL地址](../../JSP和Servlet/Servlet获取URL地址.md)、[SpringMVC页面访问不到静态文件](../SpringMVC页面访问不到静态文件.md)、[ContextLoaderListener和DispatcherServlet](../ContextLoadListener和DispatcherServlet.md)
 
 # 四、配置文件
 
