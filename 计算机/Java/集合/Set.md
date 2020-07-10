@@ -1,0 +1,3 @@
+- 交集 retainAll()
+- 并集 addAll()
+- 差集 removeAll()

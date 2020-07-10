@@ -14,7 +14,7 @@ ping [选项] ip地址/域名
 | 选项 | 说明 |
 |---|---|
 | -A | 自适应ping，根据ping包往返时间确定ping的速度 |
-| -c | ping指定次数后停止ping |
+| **-c** | **ping指定次数后停止ping** |
 | -f | 极限检测，快速连续ping一台主机，ping的速度达到100次每秒 |
 | -i | 设定间隔几秒发送一个ping包，默认一秒ping一次 |
 | -n | 不要将ip地址转换成主机名 **?** |
@@ -33,7 +33,7 @@ ping [选项] ip地址/域名
 
 # 输出格式
 ```bash
-[hecatefu@fu-fedora ~]$ ping -Ac 4 www.baidu.com
+$ ping -Ac 4 www.baidu.com
 PING www.a.shifen.com (61.135.169.121) 56(84) bytes of data.
 64 bytes from 61.135.169.121 (61.135.169.121): icmp_seq=1 ttl=55 time=23.8 ms
 64 bytes from 61.135.169.121 (61.135.169.121): icmp_seq=2 ttl=55 time=24.3 ms
