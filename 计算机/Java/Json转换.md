@@ -11,3 +11,7 @@ String jsonStr = "[\"123\",\"abc\",\"ddd\"]";
 ObjectMapper jsonMapper = new ObjectMapper();
 List<String> strList = jsonMapper.readValue(jsonStr, List.class);
 ```
+
+`@JsonInclude(JsonInclude.Include.NON_NULL)` 
+
+`@JsonProperty("ws-path")`

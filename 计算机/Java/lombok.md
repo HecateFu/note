@@ -35,7 +35,7 @@ Lombok的scope=provided，说明它只在编译阶段生效，不需要打入包
 
 ### @ToString
 
-作用于类，覆盖默认的toString()方法，可以通过of属性限定显示某些字段，通过exclude属性排除某些字段。
+作用于类，覆盖默认的toString()方法，可以通过`of`属性限定显示某些字段，通过`exclude`属性排除某些字段，`callSuper=true` 调用父类`toString()` 方法。
 
 ### @EqualsAndHashCode
 
@@ -76,6 +76,10 @@ Lombok的scope=provided，说明它只在编译阶段生效，不需要打入包
 ### @Log
 
 作用于类上，生成日志变量。针对不同的日志实现产品，有不同的注解：@CommonsLog、@JBossLog、@Log、@Log4j、@Log4j2、@Slf4j、@XSlf4j
+
+### @Accessors(chain = true)
+
+链式调用
 
 ### @Cleanup
 
