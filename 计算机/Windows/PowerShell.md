@@ -80,12 +80,15 @@ while (条件)
 循环体
 }
 # 实例
-> $total = 16                                                                             > $n =0                                                                                   > while ($total -le 200)
->> {
->> $n++
->> $total = ($total + 7) * 1.13
->> write-host $n,$total
->> }                                                                                     1 25.99
+$total = 16
+$n =0
+while ($total -le 200)
+{
+	$n++
+	$total = ($total + 7) * 1.13
+	write-host $n,$total
+}
+1 25.99
 2 37.2787
 3 50.034931
 4 64.44947203

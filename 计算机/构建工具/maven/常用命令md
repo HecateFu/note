@@ -1,0 +1,18 @@
+###### 指定settings文件
+
+```shell
+mvn [命令] --settings [配置文件路径]
+# eg：
+mvn install --settings G:\HZWQ\maven\settings.xml
+```
+
+
+
+###### 本地仓库导入本地jar
+
+```sh
+mvn install:install-file -Dfile=[文件地址] -DgroupId=[groupId] -DartifactId=[artifactId] -Dversion=[version] -Dpackaging=[包类型]
+# eg
+mvn install:install-file -Dfile=G:\HZWQ\maven\eom-sqltransformer-0.0.8.jar -DgroupId=com.hzwq.eom.common -DartifactId=eom-sqltransformer -Dversion=0.0.8 -Dpackaging=jar --settings G:\HZWQ\maven\settings.xml
+```
+

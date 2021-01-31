@@ -116,3 +116,38 @@ yum config-manager --set-disabled 仓库name
 | localinstall | 安装本地的rpm软件包 |
 | localupdate | 显示本地rpm软件包进行更新 |
 | deplist | 显示rpm软件包的所有依赖关系 |
+
+# 故障排除
+
+## dnf ImportError: No module named _conf
+
+> [参考资料](https://blog.csdn.net/brucemiao/article/details/107250962)
+
+CentOS 7 中执行 `yum install dnf` 安装完成后，执行 `dnf` 发生如下错误
+
+```
+Traceback (most recent call last):
+  File "/usr/bin/dnf", line 57, in <module>
+    from dnf.cli import main
+  File "/usr/lib/python2.7/site-packages/dnf/__init__.py", line 30, in <module>
+    import dnf.base
+  File "/usr/lib/python2.7/site-packages/dnf/base.py", line 29, in <module>
+    import libdnf.transaction
+  File "/usr/lib64/python2.7/site-packages/libdnf/__init__.py", line 3, in <module>
+    from . import conf
+  File "/usr/lib64/python2.7/site-packages/libdnf/conf.py", line 17, in <module>
+    _conf = swig_import_helper()
+  File "/usr/lib64/python2.7/site-packages/libdnf/conf.py", line 16, in swig_import_helper
+    return importlib.import_module('_conf')
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named _conf
+```
+
+使用yum升级python
+
+```
+yum update python*
+```
+
+升级后 dnf 命令可以正常使用。
