@@ -1,6 +1,8 @@
 > [RPM 入门](http://liaoph.com/linux-rpm/)
 > 
 > [菜鸟教程-rpm命令](http://www.runoob.com/linux/linux-comm-rpm.html)
+>
+> [linux 下rpm软件的安装和卸载 rpm --force -ivh ...](https://blog.csdn.net/zgbsoap/article/details/411646)
 
 # RPM 包管理命令的使用
 ## 安装
@@ -125,6 +127,14 @@ mechanism, and more.
 ```
 rpm -ql PACKAGE_NAME
 ```
+**注意这里的PACKAGE_NAME是不包括.rpm后缀的软件包的名称**
+
+如果只是想知道可执行程序放到那里去了，也可以用which，比如 `which mysql`
+
+一个没有安装过的软件包，使用`rpm -qlp ****.rpm`
+
+一个已经安装过的软件包，还可以使用 `rpm -ql ****.rpm`
+
 示例：
 ```
 $ rpm -ql zsh
