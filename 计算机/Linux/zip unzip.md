@@ -1,0 +1,19 @@
+zip -r -q -o pack.zip mark/
+
+上面命令将目录 mark/ 下的所有文件，打包成一个压缩文件，并查看了打包后文件的大小和类型。第一行命令中，-r 参数表示递归打包包含子目录的全部内容，-q 参数表示为安静模式，即不向屏幕输出信息，-o，表示输出文件，需在其后紧跟打包输出文件名。
+
+
+
+https://www.linuxprobe.com/linux-unzip.html
+
+```
+将从指定的 ZIP 存档中提取所有文件到当前目录
+unzip filename.zip
+
+禁止打印它提取的所有文件的名称以及提取完成时的摘要
+unzip -q filename.zip
+
+将 ZIP 文件解压缩到与当前目录不同的目录中
+unzip filename.zip -d /path/to/directory 
+```
+

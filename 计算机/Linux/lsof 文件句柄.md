@@ -1,0 +1,1 @@
+> [Linux下查看进程打开的文件句柄数](https://cloud.tencent.com/developer/article/1491256)

@@ -98,15 +98,38 @@ jconsole
 
 jvisualvm
 
+https://github.com/oracle/visualvm/issues/115
+
+```
+etc/visualvm.conf -J-Dsun.java2d.uiScale=1.0 --fontsize 15
+```
+
 [jvisualvm 连接 jstatd监控jvm_zuoshuaiax的专栏-CSDN博客](https://blog.csdn.net/zuoshuaiax/article/details/73849515)
 
-[VisualVM使用jstatd远程监控jvm - 简书 (jianshu.com)](https://www.jianshu.com/p/97f09e1648a6)
+jstatd -J-Djava.security.policy=/home/weblogic/jstatd.policy -J-Djava.rmi.server.hostname=192.168.11.70
+
+[VisualVM使用jstatd远程监控](https://my.oschina.net/zhangxu0512/blog/893318)
 
 jmc
 
 jcmd
 
+[jcmd oracle doc](https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr006.html)
+
+[find jcmd dump file default path](https://stackoverflow.com/questions/58519663/where-is-the-heap-dump-file-created-by-jcmd)
+
+```
+jcmd <pid> help
+jcmd <pid> help <command> 
+jcmd <pid> GC.heap_dump <fileName>
+lsof -p 17352 | grep cwd
+```
+
+
+
 MAT
+
+https://java.jiderhamn.se/2011/12/11/classloader-leaks-i-how-to-find-classloader-leaks-with-eclipse-memory-analyser-mat/
 
 JProfiler
 
