@@ -106,9 +106,9 @@ etc/visualvm.conf -J-Dsun.java2d.uiScale=1.0 --fontsize 15
 
 [jvisualvm 连接 jstatd监控jvm_zuoshuaiax的专栏-CSDN博客](https://blog.csdn.net/zuoshuaiax/article/details/73849515)
 
-jstatd -J-Djava.security.policy=/home/weblogic/jstatd.policy -J-Djava.rmi.server.hostname=192.168.11.70
+jstatd -J-Djava.security.policy=/home/weblogic/jstatd.all.policy -J-Djava.rmi.server.hostname=192.168.11.70
 
-[VisualVM使用jstatd远程监控](https://my.oschina.net/zhangxu0512/blog/893318)
+
 
 jmc
 

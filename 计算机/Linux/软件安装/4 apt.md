@@ -20,3 +20,15 @@ apt update
 apt upgrade
 ```
 
+查看当前可升级的安装包
+
+```
+apt list --upgradable
+```
+
+查看当前已安装的安装包
+
+```
+apt list --installed
+```
+
